@@ -1,0 +1,314 @@
+<!--
+  DESIGN REFERENCE — extracted from the Claude Design prototype (Mule_Imposter.html).
+  This is the visual + interaction source of truth. It is written in a prototype DSL:
+    - sc-if value="{{ expr }}"        => conditional render
+    - sc-for list="{{ arr }}" as="x"  => list render
+    - {{ binding }}                   => value from Component.renderVals()
+    - sc-camel-on-click="{{ fn }}"    => click handler
+  Reimplement as Next.js React components. Match the inline styles, colors, spacing,
+  animations (riseIn, popIn) and typography exactly.
+
+  FONTS (load via next/font/google): 'Barlow' (400/500/600/700), 'Barlow Condensed' (800).
+  KEY COLORS: navy #14315f (crew/primary), dark maroon #2b1216 (imposter card),
+  page bg #eef0f4, muted text #5c6575 / #8a93a3, borders #c9d0dc / #dde2ea,
+  success #3e6b4a, warn #a04545.
+  LAYOUT: single column, max-width 430px, centered, mobile-first.
+-->
+
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html, body { margin: 0; padding: 0; background: #eef0f4; }
+  * { box-sizing: border-box; }
+  a { color: #1d3f7e; } a:hover { color: #16305f; }
+  button { font-family: inherit; }
+  @keyframes riseIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes popIn { 0% { opacity: 0; transform: scale(.92); } 70% { transform: scale(1.02); } 100% { opacity: 1; transform: scale(1); } }
+</style>
+</helmet>
+
+<div style="min-height: 100vh; display: flex; justify-content: center; font-family: 'Barlow', sans-serif; color: #11151c; background: radial-gradient(1200px 600px at 50% -200px, #dfe4ec, #eef0f4)">
+  <div style="width: 100%; max-width: 430px; min-height: 100vh; display: flex; flex-direction: column; padding: 24px 20px 32px 20px">
+
+    <!-- ============ HOME ============ -->
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 40px; animation: riseIn .5s ease both">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+          <div style="width: 72px; height: 72px; border-radius: 20px; background: #14315f; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 28px rgba(20,49,95,.35)">
+            <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 34px; color: #f4f6fa; letter-spacing: 1px">MI</div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 4px">
+            <h1 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 52px; line-height: 1; letter-spacing: .5px; text-transform: uppercase">Mule <span style="color: #14315f">Imposter</span></h1>
+            <p style="margin: 0; font-size: 15px; font-weight: 500; color: #5c6575">One of you doesn't know the player.</p>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <button sc-camel-on-click="{{ goStart }}" style="border: none; cursor: pointer; border-radius: 14px; padding: 18px; background: #14315f; color: #f4f6fa; font-size: 17px; font-weight: 700; letter-spacing: .3px; box-shadow: 0 10px 24px rgba(20,49,95,.3)" style-hover="background: #0f2749" style-active="transform: scale(.98)">Start game</button>
+          <button sc-camel-on-click="{{ goJoin }}" style="border: 2px solid #c9d0dc; cursor: pointer; border-radius: 14px; padding: 16px; background: #ffffff; color: #14315f; font-size: 17px; font-weight: 700; letter-spacing: .3px" style-hover="border-color: #14315f" style-active="transform: scale(.98)">Join game</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ============ JOIN / NAME ENTRY ============ -->
+    <sc-if value="{{ isJoin }}" hint-placeholder-val="{{ false }}">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 28px; animation: riseIn .4s ease both">
+        <button sc-camel-on-click="{{ goHome }}" style="align-self: flex-start; border: none; background: none; cursor: pointer; padding: 6px 0; font-size: 14px; font-weight: 600; color: #5c6575" style-hover="color: #14315f">← Back</button>
+        <div style="display: flex; flex-direction: column; gap: 6px">
+          <h2 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 38px; text-transform: uppercase; letter-spacing: .5px">{{ joinTitle }}</h2>
+          <p style="margin: 0; font-size: 15px; color: #5c6575">{{ joinSubtitle }}</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 18px">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <label style="font-size: 13px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #5c6575">Your name</label>
+            <input value="{{ nameInput }}" sc-camel-on-change="{{ onNameChange }}" placeholder="e.g. Ben" style="border: 2px solid #c9d0dc; border-radius: 12px; padding: 14px 16px; font-size: 17px; font-weight: 600; font-family: 'Barlow', sans-serif; background: #ffffff; color: #11151c; outline: none" style-focus="border-color: #14315f">
+          </div>
+          <sc-if value="{{ isJoining }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; gap: 8px">
+              <label style="font-size: 13px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #5c6575">Room code</label>
+              <input value="{{ codeInput }}" sc-camel-on-change="{{ onCodeChange }}" placeholder="ABCD" sc-camel-max-length="4" style="border: 2px solid #c9d0dc; border-radius: 12px; padding: 14px 16px; font-size: 26px; font-weight: 800; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 10px; text-transform: uppercase; text-align: center; background: #ffffff; color: #11151c; outline: none" style-focus="border-color: #14315f">
+            </div>
+          </sc-if>
+          <button sc-camel-on-click="{{ submitJoin }}" disabled="{{ joinDisabled }}" style="border: none; cursor: pointer; border-radius: 14px; padding: 17px; background: #14315f; color: #f4f6fa; font-size: 17px; font-weight: 700; opacity: {{ joinBtnOpacity }}" style-hover="background: #0f2749" style-active="transform: scale(.98)">{{ joinCta }}</button>
+        </div>
+      </div>
+    </sc-if>
+
+    <!-- ============ LOBBY ============ -->
+    <sc-if value="{{ isLobby }}" hint-placeholder-val="{{ false }}">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 22px; animation: riseIn .4s ease both">
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <button sc-camel-on-click="{{ goHome }}" style="border: none; background: none; cursor: pointer; padding: 6px 0; font-size: 14px; font-weight: 600; color: #5c6575" style-hover="color: #14315f">← Leave</button>
+          <div style="display: flex; align-items: center; gap: 8px; background: #ffffff; border: 2px solid #c9d0dc; border-radius: 10px; padding: 6px 12px">
+            <span style="font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #8a93a3">Room</span>
+            <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: 4px; color: #14315f">{{ roomCode }}</span>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="display: flex; align-items: baseline; justify-content: space-between">
+            <h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase; letter-spacing: .5px">Players</h3>
+            <span style="font-size: 13px; font-weight: 600; color: {{ countColor }}">{{ playerCountLabel }}</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <sc-for list="{{ players }}" as="p" hint-placeholder-count="4">
+              <div style="display: flex; align-items: center; gap: 12px; background: #ffffff; border-radius: 12px; padding: 12px 14px; box-shadow: 0 1px 3px rgba(17,21,28,.06)">
+                <div style="width: 34px; height: 34px; border-radius: 50%; background: {{ p.avatarBg }}; color: #ffffff; display: flex; align-items: center; justify-content: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 16px">{{ p.initial }}</div>
+                <span style="flex: 1; font-size: 16px; font-weight: 600">{{ p.name }}</span>
+                <sc-if value="{{ p.isHost }}" hint-placeholder-val="{{ false }}">
+                  <span style="font-size: 11px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #14315f; background: #e3e9f4; border-radius: 6px; padding: 3px 8px">Host</span>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 16px; background: #ffffff; border-radius: 16px; padding: 18px 16px; box-shadow: 0 1px 3px rgba(17,21,28,.06)">
+          <h3 style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 24px; text-transform: uppercase; letter-spacing: .5px">Settings</h3>
+
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <label style="font-size: 13px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #5c6575">Player obscurity</label>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px">
+              <sc-for list="{{ obscurityOptions }}" as="opt" hint-placeholder-count="5">
+                <button sc-camel-on-click="{{ opt.select }}" style="flex: 1; min-width: 60px; border: 2px solid {{ opt.border }}; background: {{ opt.bg }}; color: {{ opt.color }}; cursor: pointer; border-radius: 10px; padding: 9px 4px; font-size: 13px; font-weight: 700" style-hover="border-color: #14315f">{{ opt.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <label style="font-size: 13px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #5c6575">Clue difficulty</label>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px">
+              <sc-for list="{{ clueOptions }}" as="opt" hint-placeholder-count="5">
+                <button sc-camel-on-click="{{ opt.select }}" style="flex: 1; min-width: 60px; border: 2px solid {{ opt.border }}; background: {{ opt.bg }}; color: {{ opt.color }}; cursor: pointer; border-radius: 10px; padding: 9px 4px; font-size: 13px; font-weight: 700" style-hover="border-color: #14315f">{{ opt.label }}</button>
+              </sc-for>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <label style="font-size: 13px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #5c6575">Player pool · pick any</label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px">
+              <sc-for list="{{ categoryOptions }}" as="cat" hint-placeholder-count="4">
+                <button sc-camel-on-click="{{ cat.toggle }}" style="display: flex; align-items: center; gap: 8px; border: 2px solid {{ cat.border }}; background: {{ cat.bg }}; cursor: pointer; border-radius: 10px; padding: 10px 10px; text-align: left" style-hover="border-color: #14315f">
+                  <div style="width: 18px; height: 18px; flex-shrink: 0; border-radius: 5px; border: 2px solid {{ cat.boxBorder }}; background: {{ cat.boxBg }}; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 12px; font-weight: 800">{{ cat.check }}</div>
+                  <span style="font-size: 13px; font-weight: 600; line-height: 1.2; color: {{ cat.color }}">{{ cat.label }}</span>
+                </button>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <button sc-camel-on-click="{{ startGame }}" disabled="{{ startDisabled }}" style="border: none; cursor: pointer; border-radius: 14px; padding: 18px; background: #14315f; color: #f4f6fa; font-size: 17px; font-weight: 700; box-shadow: 0 10px 24px rgba(20,49,95,.3); opacity: {{ startBtnOpacity }}" style-hover="background: #0f2749" style-active="transform: scale(.98)">{{ startLabel }}</button>
+      </div>
+    </sc-if>
+
+    <!-- ============ GAME ============ -->
+    <sc-if value="{{ isGame }}" hint-placeholder-val="{{ false }}">
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 24px; animation: riseIn .4s ease both">
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <span style="font-size: 13px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: #8a93a3">Round {{ roundNumber }}</span>
+          <div style="display: flex; align-items: center; gap: 8px; background: #ffffff; border: 2px solid #c9d0dc; border-radius: 10px; padding: 6px 12px">
+            <span style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: 4px; color: #14315f">{{ roomCode }}</span>
+          </div>
+        </div>
+
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 16px">
+          <sc-if value="{{ isImposter }}" hint-placeholder-val="{{ false }}">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; background: #2b1216; border-radius: 22px; padding: 48px 24px; text-align: center; box-shadow: 0 18px 44px rgba(43,18,22,.4); animation: popIn .45s ease both">
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #d99aa3">You are the</span>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 62px; line-height: 1; letter-spacing: 2px; text-transform: uppercase; color: #f3dfe2">Imposter</div>
+              <div style="display: flex; flex-direction: column; gap: 6px; background: rgba(255,255,255,.07); border-radius: 14px; padding: 16px 20px; max-width: 300px">
+                <span style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #d99aa3">Your clue</span>
+                <span style="font-size: 18px; font-weight: 600; line-height: 1.4; color: #f7edee">{{ clueText }}</span>
+              </div>
+              <p style="margin: 0; font-size: 13px; font-weight: 500; color: #b98a91; max-width: 260px">Blend in. Don't let them figure out you don't know the player.</p>
+            </div>
+          </sc-if>
+          <sc-if value="{{ isCrew }}" hint-placeholder-val="{{ true }}">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; background: #14315f; border-radius: 22px; padding: 48px 24px; text-align: center; box-shadow: 0 18px 44px rgba(20,49,95,.4); animation: popIn .45s ease both">
+              <span style="font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #9fb2d4">The player is</span>
+              <div style="font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: 54px; line-height: 1.05; letter-spacing: 1px; text-transform: uppercase; color: #f4f6fa">{{ playerName }}</div>
+              <p style="margin: 0; font-size: 13px; font-weight: 500; color: #9fb2d4; max-width: 260px">Everyone else sees this too — except one. Find the imposter.</p>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <button sc-camel-on-click="{{ newRound }}" style="border: none; cursor: pointer; border-radius: 14px; padding: 17px; background: #14315f; color: #f4f6fa; font-size: 17px; font-weight: 700" style-hover="background: #0f2749" style-active="transform: scale(.98)">New round</button>
+          <button sc-camel-on-click="{{ backToLobby }}" style="border: 2px solid #c9d0dc; cursor: pointer; border-radius: 14px; padding: 14px; background: #ffffff; color: #5c6575; font-size: 15px; font-weight: 700" style-hover="border-color: #14315f; color: #14315f">Back to lobby</button>
+        </div>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+</x-dc>
+
+<!-- Component logic from the prototype (mock state machine + all bindings/handlers).
+     The `// BACKEND:` comments mark exactly what gets replaced by Convex queries/mutations. -->
+<script type="text/x-dc" data-dc-script="" data-props="{
+  &quot;demoRole&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;options&quot;: [&quot;crew&quot;, &quot;imposter&quot;], &quot;default&quot;: null, &quot;tsType&quot;: &quot;'crew' | 'imposter' | null&quot;, &quot;section&quot;: &quot;Demo&quot; },
+  &quot;playerName&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Nikola Jokic&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Demo&quot; },
+  &quot;clueText&quot;: { &quot;editor&quot;: &quot;text&quot;, &quot;default&quot;: &quot;Plays center in the Western Conference&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Demo&quot; }
+}">
+class Component extends DCLogic {
+  state = {
+    screen: 'home',            // home | join | lobby | game
+    mode: 'start',             // start (host) | join
+    nameInput: '',
+    codeInput: '',
+    obscurity: 'medium',       // easy | medium | hard | impossible | random
+    clueDifficulty: 'medium',
+    categories: { ppg: true, allstars: false, hof: false, defense: false },
+    round: 1,
+    // BACKEND: role + assignment come from the server. Mocked here for the prototype.
+    role: null,                // 'crew' | 'imposter', assigned per round
+  };
+
+  // BACKEND: replace with live lobby roster from server
+  mockPlayers = ['You', 'Sam', 'Jack', 'Maddie'];
+  // BACKEND: replace with player drawn from selected pool + obscurity
+  mockPlayer = 'Nikola Jokic';
+  // BACKEND: clue text generated server-side based on clue difficulty
+  mockClue = 'Plays center in the Western Conference';
+
+  levels = [
+    { id: 'easy', label: 'Easy' },
+    { id: 'medium', label: 'Medium' },
+    { id: 'hard', label: 'Hard' },
+    { id: 'impossible', label: 'Impossible' },
+    { id: 'random', label: 'Random' },
+  ];
+  cats = [
+    { id: 'ppg', label: 'Active, 10+ PPG' },
+    { id: 'allstars', label: 'Active All-Stars' },
+    { id: 'hof', label: 'Hall of Famers' },
+    { id: 'defense', label: 'Active defensive teams' },
+  ];
+  avatarColors = ['#14315f', '#5c6575', '#7a5c2e', '#3e5c4a', '#5a3e5c', '#2e6b7a'];
+
+  segOptions(key) {
+    const cur = this.state[key === 'obscurity' ? 'obscurity' : 'clueDifficulty'];
+    return this.levels.map((l) => {
+      const sel = cur === l.id;
+      return {
+        label: l.label,
+        border: sel ? '#14315f' : '#dde2ea',
+        bg: sel ? '#14315f' : '#f6f7f9',
+        color: sel ? '#f4f6fa' : '#5c6575',
+        select: () => this.setState(key === 'obscurity' ? { obscurity: l.id } : { clueDifficulty: l.id }),
+      };
+    });
+  }
+
+  renderVals() {
+    const s = this.state;
+    const minPlayers = 3;
+    const hostName = s.nameInput.trim() || 'You';
+    const players = this.mockPlayers.map((n, i) => ({
+      name: i === 0 ? hostName : n,
+      initial: (i === 0 ? hostName : n).charAt(0).toUpperCase(),
+      isHost: i === 0 && s.mode === 'start',
+      avatarBg: this.avatarColors[i % this.avatarColors.length],
+    }));
+    const anyCat = Object.values(s.categories).some(Boolean);
+    const enough = players.length >= minPlayers;
+    const startDisabled = !anyCat || !enough;
+    const joining = s.mode === 'join';
+    const joinDisabled = !s.nameInput.trim() || (joining && s.codeInput.trim().length !== 4);
+    const role = this.props.demoRole ?? s.role ?? 'crew';
+
+    return {
+      isHome: s.screen === 'home',
+      isJoin: s.screen === 'join',
+      isLobby: s.screen === 'lobby',
+      isGame: s.screen === 'game',
+      isJoining: joining,
+      joinTitle: joining ? 'Join a game' : 'Start a game',
+      joinSubtitle: joining ? 'Enter your name and the room code from your host.' : 'Enter your name to create a room.',
+      joinCta: joining ? 'Join lobby' : 'Create lobby',
+      joinDisabled,
+      joinBtnOpacity: joinDisabled ? 0.45 : 1,
+      nameInput: s.nameInput,
+      codeInput: s.codeInput,
+      onNameChange: (e) => this.setState({ nameInput: e.target.value }),
+      onCodeChange: (e) => this.setState({ codeInput: e.target.value.toUpperCase().slice(0, 4) }),
+      goStart: () => this.setState({ screen: 'join', mode: 'start' }),
+      goJoin: () => this.setState({ screen: 'join', mode: 'join' }),
+      goHome: () => this.setState({ screen: 'home', codeInput: '' }),
+      // BACKEND: create/join room via server; code below is mocked
+      submitJoin: () => this.setState({ screen: 'lobby', codeInput: joining ? s.codeInput : 'MULE' }),
+      roomCode: s.codeInput || 'MULE',
+      players,
+      playerCountLabel: players.length + ' / ' + minPlayers + '+ needed',
+      countColor: enough ? '#3e6b4a' : '#a04545',
+      obscurityOptions: this.segOptions('obscurity'),
+      clueOptions: this.segOptions('clue'),
+      categoryOptions: this.cats.map((c) => {
+        const on = s.categories[c.id];
+        return {
+          label: c.label,
+          check: on ? '\u2713' : '',
+          border: on ? '#14315f' : '#dde2ea',
+          bg: on ? '#e9eef7' : '#f6f7f9',
+          color: on ? '#14315f' : '#5c6575',
+          boxBorder: on ? '#14315f' : '#b8c0cd',
+          boxBg: on ? '#14315f' : '#ffffff',
+          toggle: () => this.setState({ categories: { ...s.categories, [c.id]: !on } }),
+        };
+      }),
+      startDisabled,
+      startBtnOpacity: startDisabled ? 0.45 : 1,
+      startLabel: anyCat ? 'Start game' : 'Pick at least one category',
+      // BACKEND: server assigns roles; mock randomly picks imposter ~1/4 of the time
+      startGame: () => this.setState({ screen: 'game', round: 1, role: Math.random() < 0.25 ? 'imposter' : 'crew' }),
+      newRound: () => this.setState({ round: s.round + 1, role: Math.random() < 0.25 ? 'imposter' : 'crew' }),
+      backToLobby: () => this.setState({ screen: 'lobby' }),
+      roundNumber: s.round,
+      isImposter: role === 'imposter',
+      isCrew: role !== 'imposter',
+      playerName: this.props.playerName ?? this.mockPlayer,
+      clueText: this.props.clueText ?? this.mockClue,
+    };
+  }
+}
+</script>

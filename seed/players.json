@@ -1,0 +1,835 @@
+{
+  "players": [
+    {
+      "name": "LeBron James",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "An active forward in the Western Conference",
+          "Reached the Finals in the early 2020s"
+        ],
+        "medium": [
+          "Was the first overall pick in his draft",
+          "Won Rookie of the Year"
+        ],
+        "hard": [
+          "Has acted in a feature film",
+          "Won an Olympic gold medal after turning 30"
+        ],
+        "impossible": [
+          "Has played at least 20 NBA seasons",
+          "Has been an All-Star in three different decades"
+        ]
+      }
+    },
+    {
+      "name": "Stephen Curry",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "An active guard in the Western Conference",
+          "Won a championship in the 2020s"
+        ],
+        "medium": [
+          "Has won back-to-back MVP awards",
+          "Has won the All-Star three-point contest"
+        ],
+        "hard": [
+          "His father played professional basketball",
+          "Has a brother who has played in the NBA"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Kevin Durant",
+      "tags": ["ppg10", "allstars", "defense"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "An active forward in the Western Conference",
+          "Starred in the 2010s"
+        ],
+        "medium": [
+          "Has led the league in scoring",
+          "Has played for at least four NBA franchises"
+        ],
+        "hard": [
+          "Won Rookie of the Year but not as a No. 1 overall pick",
+          "Suffered a torn Achilles during a playoff run"
+        ],
+        "impossible": [
+          "Won four scoring titles within five seasons",
+          "Won a title in his first season with a new team"
+        ]
+      }
+    },
+    {
+      "name": "Giannis Antetokounmpo",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "An active forward in the Eastern Conference",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Has won back-to-back MVP awards",
+          "Played professionally in Europe before the NBA"
+        ],
+        "hard": [
+          "Won Defensive Player of the Year",
+          "Has a sibling who has played in the NBA"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Nikola Jokic",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "An active center in the Western Conference",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Has won at least three MVP awards",
+          "Won a championship and was named Finals MVP"
+        ],
+        "hard": [
+          "Was drafted in the second round",
+          "Was named MVP of a European league before coming to the NBA"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Luka Doncic",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "An active guard in the Western Conference",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Has led the league in scoring",
+          "Reached the Finals in the mid-2020s"
+        ],
+        "hard": [
+          "Was traded on draft night by the team that picked him",
+          "Was named MVP of a European league before coming to the NBA"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Victor Wembanyama",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "An active center in the Western Conference",
+          "An active All-Star big man"
+        ],
+        "medium": [
+          "Won Rookie of the Year",
+          "Played professionally in Europe before the NBA"
+        ],
+        "hard": [
+          "Has led the league in blocked shots",
+          "Made an All-Defensive team before ever making an All-Star team"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Michael Jordan",
+      "tags": ["hof"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "A Hall of Fame guard",
+          "Starred in the 1990s"
+        ],
+        "medium": [
+          "Won the Slam Dunk Contest",
+          "Has won multiple Finals MVP awards"
+        ],
+        "hard": [
+          "Won Defensive Player of the Year",
+          "Finished his career with a franchise he isn't primarily associated with"
+        ],
+        "impossible": [
+          "Has been an All-Star in three different decades",
+          "Won four scoring titles within five seasons"
+        ]
+      }
+    },
+    {
+      "name": "Kobe Bryant",
+      "tags": ["hof"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "A Hall of Fame guard",
+          "Starred in the 1990s"
+        ],
+        "medium": [
+          "Has won at least four NBA titles",
+          "A Hall of Famer who spent his whole career with one franchise"
+        ],
+        "hard": [
+          "His father played professional basketball",
+          "Won an Olympic gold medal after turning 30"
+        ],
+        "impossible": [
+          "Has played at least 20 NBA seasons",
+          "Has recorded rap music professionally"
+        ]
+      }
+    },
+    {
+      "name": "Shaquille O'Neal",
+      "tags": ["hof"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "A Hall of Fame center",
+          "Starred in the 1990s"
+        ],
+        "medium": [
+          "Won Rookie of the Year",
+          "Has played for at least four NBA franchises"
+        ],
+        "hard": [
+          "Won MVP and Finals MVP in the same season",
+          "Won a scoring title and a championship in the same season"
+        ],
+        "impossible": [
+          "Has recorded rap music professionally"
+        ]
+      }
+    },
+    {
+      "name": "Magic Johnson",
+      "tags": ["hof"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "A Hall of Fame guard",
+          "Starred in the 1980s"
+        ],
+        "medium": [
+          "Was the first overall pick in his draft",
+          "Won a college national championship"
+        ],
+        "hard": [
+          "Won MVP and Finals MVP in the same season",
+          "Won multiple titles in the 1980s"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Larry Bird",
+      "tags": ["hof"],
+      "popularityTier": 1,
+      "clues": {
+        "easy": [
+          "A Hall of Fame forward",
+          "Starred in the 1980s"
+        ],
+        "medium": [
+          "Has won back-to-back MVP awards",
+          "Has won the All-Star three-point contest"
+        ],
+        "hard": [
+          "Won Rookie of the Year but not as a No. 1 overall pick",
+          "Was named national college player of the year"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Jayson Tatum",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active forward in the Eastern Conference",
+          "Reached the Finals in the early 2020s"
+        ],
+        "medium": [
+          "Has won an Olympic gold medal in the 2020s",
+          "Has scored 60 or more points in an NBA game"
+        ],
+        "hard": [
+          "Was a top-three pick who didn't win Rookie of the Year",
+          "Suffered a torn Achilles during a playoff run"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Shai Gilgeous-Alexander",
+      "tags": ["ppg10", "allstars", "defense"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active All-Star guard",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Has led the league in scoring",
+          "Won MVP in the 2020s"
+        ],
+        "hard": [
+          "Was traded on draft night by the team that picked him",
+          "Won MVP and Finals MVP in the same season"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Anthony Edwards",
+      "tags": ["ppg10", "allstars", "defense"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active guard in the Western Conference",
+          "An active All-Star guard"
+        ],
+        "medium": [
+          "Has won an Olympic gold medal in the 2020s",
+          "Made his first All-Star team before turning 23"
+        ],
+        "hard": [
+          "Was a No. 1 overall pick who didn't win Rookie of the Year",
+          "Has acted in a feature film"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Joel Embiid",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active center in the Eastern Conference",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Has led the league in scoring",
+          "Won MVP in the 2020s"
+        ],
+        "hard": [
+          "Was a top-three pick who didn't win Rookie of the Year",
+          "Has scored 70 or more points in an NBA game"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Devin Booker",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active guard in the Western Conference",
+          "Reached the Finals in the early 2020s"
+        ],
+        "medium": [
+          "Has won the All-Star three-point contest",
+          "Has won an Olympic gold medal in the 2020s"
+        ],
+        "hard": [
+          "Has scored 70 or more points in an NBA game",
+          "Played a single college season at Kentucky"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Damian Lillard",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active guard in the Western Conference",
+          "An active All-Star guard"
+        ],
+        "medium": [
+          "Won Rookie of the Year",
+          "Has won the All-Star three-point contest"
+        ],
+        "hard": [
+          "Played college basketball at a mid-major school",
+          "Suffered a torn Achilles during a playoff run"
+        ],
+        "impossible": [
+          "Has recorded rap music professionally"
+        ]
+      }
+    },
+    {
+      "name": "Anthony Davis",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active big man in the Western Conference",
+          "An active All-Star big man"
+        ],
+        "medium": [
+          "Won a college national championship",
+          "Has won an Olympic gold medal in the 2020s"
+        ],
+        "hard": [
+          "Was a No. 1 overall pick who didn't win Rookie of the Year",
+          "Has led the league in blocked shots"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Kyrie Irving",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active guard in the Western Conference",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Won Rookie of the Year",
+          "Has played for at least four NBA franchises"
+        ],
+        "hard": [
+          "Has acted in a feature film",
+          "Won a FIBA World Cup with his national team"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Jimmy Butler",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "An active forward in the Western Conference",
+          "Reached the Finals in the early 2020s"
+        ],
+        "medium": [
+          "Has played for at least four NBA franchises",
+          "Was drafted outside the top 10"
+        ],
+        "hard": [
+          "Attended junior college before his pro career",
+          "Has reached the Finals but never won it"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Tim Duncan",
+      "tags": ["hof"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "A Hall of Fame big man",
+          "Starred in the 1990s"
+        ],
+        "medium": [
+          "Was the first overall pick in his draft",
+          "Has won at least four NBA titles"
+        ],
+        "hard": [
+          "Won MVP and Finals MVP in the same season",
+          "Grew up outside the mainland United States"
+        ],
+        "impossible": [
+          "Has been an All-Star in three different decades"
+        ]
+      }
+    },
+    {
+      "name": "Dirk Nowitzki",
+      "tags": ["hof"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "A Hall of Fame big man",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Won an MVP award in the 2000s",
+          "Played professionally in Europe before the NBA"
+        ],
+        "hard": [
+          "Was traded on draft night by the team that picked him",
+          "Lost his first Finals appearance but won a title later"
+        ],
+        "impossible": [
+          "Has played at least 20 NBA seasons"
+        ]
+      }
+    },
+    {
+      "name": "Allen Iverson",
+      "tags": ["hof"],
+      "popularityTier": 2,
+      "clues": {
+        "easy": [
+          "A Hall of Fame guard",
+          "Starred in the 1990s"
+        ],
+        "medium": [
+          "Was the first overall pick in his draft",
+          "Has led the league in scoring"
+        ],
+        "hard": [
+          "Has reached the Finals but never won it",
+          "Has led the league in steals multiple times"
+        ],
+        "impossible": [
+          "Has recorded rap music professionally"
+        ]
+      }
+    },
+    {
+      "name": "Jalen Brunson",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active guard in the Eastern Conference",
+          "An active All-Star guard"
+        ],
+        "medium": [
+          "Won a college national championship",
+          "Has scored 60 or more points in an NBA game"
+        ],
+        "hard": [
+          "His father played professional basketball",
+          "Was named national college player of the year"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Tyrese Haliburton",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active guard in the Eastern Conference",
+          "An active All-Star guard"
+        ],
+        "medium": [
+          "Was drafted outside the top 10",
+          "Reached the Finals in the mid-2020s"
+        ],
+        "hard": [
+          "Suffered a torn Achilles during a playoff run",
+          "Was traded by his first NBA team while still on his rookie contract"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Domantas Sabonis",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active center in the Western Conference",
+          "An active All-Star big man"
+        ],
+        "medium": [
+          "Was drafted outside the top 10",
+          "Has averaged a double-double over multiple seasons"
+        ],
+        "hard": [
+          "His father played professional basketball",
+          "Was traded by his first NBA team while still on his rookie contract"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Bam Adebayo",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active center in the Eastern Conference",
+          "An active All-Star big man"
+        ],
+        "medium": [
+          "Has been named to an All-Defensive team",
+          "Has won an Olympic gold medal in the 2020s"
+        ],
+        "hard": [
+          "Has reached the Finals but never won it",
+          "Played a single college season at Kentucky"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Evan Mobley",
+      "tags": ["ppg10", "allstars", "defense"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active big man in the Eastern Conference",
+          "An active All-Star big man"
+        ],
+        "medium": [
+          "Has been named to an All-Defensive team",
+          "Was a top-five pick in the 2020s"
+        ],
+        "hard": [
+          "Won Defensive Player of the Year",
+          "Has been an NBA teammate of his own brother"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Jaren Jackson Jr.",
+      "tags": ["ppg10", "allstars"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active big man in the Western Conference",
+          "An active player still with the team that drafted him"
+        ],
+        "medium": [
+          "Has been named to an All-Defensive team",
+          "Has been an All-Star multiple times in the 2020s"
+        ],
+        "hard": [
+          "His father played professional basketball",
+          "Has led the league in blocked shots"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Franz Wagner",
+      "tags": ["ppg10", "defense"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active forward in the Eastern Conference",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Played professionally in Europe before the NBA",
+          "Has spent his whole career with a Florida team"
+        ],
+        "hard": [
+          "Has been an NBA teammate of his own brother",
+          "Won a FIBA World Cup with his national team"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Chet Holmgren",
+      "tags": ["ppg10", "defense"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active big man in the Western Conference",
+          "Won a championship in the 2020s"
+        ],
+        "medium": [
+          "Won a championship in the mid-2020s",
+          "Was a top-five pick in the 2020s"
+        ],
+        "hard": [
+          "Was a top-three pick who didn't win Rookie of the Year",
+          "Missed an entire NBA season due to injury"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Alperen Sengun",
+      "tags": ["ppg10", "allstars", "defense"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "An active center in the Western Conference",
+          "Was born outside the United States"
+        ],
+        "medium": [
+          "Has played for a Texas franchise",
+          "Played professionally in Europe before the NBA"
+        ],
+        "hard": [
+          "Was traded on draft night by the team that picked him",
+          "Was named MVP of a European league before coming to the NBA"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Dominique Wilkins",
+      "tags": ["hof"],
+      "popularityTier": 3,
+      "clues": {
+        "easy": [
+          "A Hall of Fame forward",
+          "Starred in the 1980s"
+        ],
+        "medium": [
+          "Won the Slam Dunk Contest",
+          "Has led the league in scoring"
+        ],
+        "hard": [
+          "Continued his pro career in Europe after leaving the NBA",
+          "A Hall of Famer who never played in the NBA Finals"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Isaiah Hartenstein",
+      "tags": ["ppg10", "defense"],
+      "popularityTier": 4,
+      "clues": {
+        "easy": [
+          "An active center in the Western Conference",
+          "Won a championship in the 2020s"
+        ],
+        "medium": [
+          "Has played for at least four NBA franchises",
+          "Won a championship in the mid-2020s"
+        ],
+        "hard": [
+          "His father played professional basketball",
+          "Was drafted in the second round"
+        ],
+        "impossible": [
+          "Won a title in his first season with a new team"
+        ]
+      }
+    },
+    {
+      "name": "Herb Jones",
+      "tags": ["ppg10"],
+      "popularityTier": 4,
+      "clues": {
+        "easy": [
+          "An active forward in the Western Conference",
+          "An active player still with the team that drafted him"
+        ],
+        "medium": [
+          "Has been named to an All-Defensive team",
+          "An active player known primarily for his defense"
+        ],
+        "hard": [
+          "Was named his conference's player of the year in college",
+          "Made an All-Defensive team before ever making an All-Star team"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "Jalen Suggs",
+      "tags": ["ppg10", "defense"],
+      "popularityTier": 4,
+      "clues": {
+        "easy": [
+          "An active guard in the Eastern Conference",
+          "An active player still with the team that drafted him"
+        ],
+        "medium": [
+          "Has been named to an All-Defensive team",
+          "Was a top-five pick in the 2020s"
+        ],
+        "hard": [
+          "Made an All-Defensive team before ever making an All-Star team",
+          "Was a standout football player before committing to basketball"
+        ],
+        "impossible": []
+      }
+    },
+    {
+      "name": "George Gervin",
+      "tags": ["hof"],
+      "popularityTier": 4,
+      "clues": {
+        "easy": [
+          "A Hall of Fame guard",
+          "Starred in the 1970s"
+        ],
+        "medium": [
+          "Has led the league in scoring",
+          "Has played for a Texas franchise"
+        ],
+        "hard": [
+          "Played college basketball at a mid-major school",
+          "Continued his pro career in Europe after leaving the NBA"
+        ],
+        "impossible": [
+          "Played pro basketball before the ABA-NBA merger"
+        ]
+      }
+    },
+    {
+      "name": "Bob McAdoo",
+      "tags": ["hof"],
+      "popularityTier": 4,
+      "clues": {
+        "easy": [
+          "A Hall of Fame big man",
+          "Starred in the 1970s"
+        ],
+        "medium": [
+          "Won Rookie of the Year",
+          "Won multiple titles with the Lakers"
+        ],
+        "hard": [
+          "Attended junior college before his pro career",
+          "Continued his pro career in Europe after leaving the NBA"
+        ],
+        "impossible": [
+          "Played pro basketball before the ABA-NBA merger",
+          "Won a title in his first season with a new team"
+        ]
+      }
+    },
+    {
+      "name": "Artis Gilmore",
+      "tags": ["hof"],
+      "popularityTier": 4,
+      "clues": {
+        "easy": [
+          "A Hall of Fame center",
+          "Starred in the 1970s"
+        ],
+        "medium": [
+          "Has been named to an All-Defensive team",
+          "A Hall of Famer without an NBA championship ring"
+        ],
+        "hard": [
+          "Attended junior college before his pro career",
+          "Won a championship in a league other than the NBA"
+        ],
+        "impossible": [
+          "Played pro basketball before the ABA-NBA merger"
+        ]
+      }
+    }
+  ]
+}
