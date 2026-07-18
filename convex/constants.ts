@@ -4,7 +4,7 @@ export const CATEGORIES = [
   { id: "ppg10", label: "Active, 10+ PPG" },
   { id: "allstars", label: "Active All-Stars" },
   { id: "hof", label: "Hall of Famers" },
-  { id: "defense", label: "Active defensive teams" },
+  { id: "defense", label: "Active All-Defense" },
 ] as const;
 
 export type CategoryId = (typeof CATEGORIES)[number]["id"];

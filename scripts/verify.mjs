@@ -136,7 +136,7 @@ ok(
 const impCard = imposters[0][1];
 ok("imposter card has clue + category labels", impCard.clueText.length > 0 &&
   JSON.stringify(impCard.categories) === '["Active, 10+ PPG","Active All-Stars"]',
-  `clue: "${impCard.clueText}"`);
+  `clue: "${impCard.clueText}"; cats: ${JSON.stringify(impCard.categories)}`);
 ok(
   "crew payload keys",
   JSON.stringify(Object.keys(crew[0][1]).sort()) === '["playerName","role"]',
@@ -209,25 +209,53 @@ await expectError(
 );
 
 console.log("\n6. Fallback audit (settings matching zero players)");
-// No tier-4 (impossible) player has the allstars tag in the seed, so this
-// forces the tier-widening path. Impossible clues are also sparse, forcing
-// the nearest-difficulty fallback for most players.
-await client.mutation(api.rooms.updateSettings, {
-  sessionId: host,
-  roomId,
-  settings: { obscurity: "impossible", clueDifficulty: "impossible", categories: ["allstars"] },
-});
-await client.mutation(api.games.startGame, { sessionId: host, roomId });
-game = await client.query(api.games.getCurrentGame, { roomId });
-cards = await fetchAssignments(game.gameId);
-imposters = Object.entries(cards).filter(([, c]) => c.role === "imposter");
-crew = Object.entries(cards).filter(([, c]) => c.role === "crew");
-ok(
-  "widening produced a round instead of an error",
-  game.roundNumber === 1 && imposters.length === 1 && crew[0][1].playerName.length > 0,
-  `player: ${crew[0][1].playerName}`,
-);
-await client.mutation(api.games.backToLobby, { sessionId: host, roomId });
+// Discover an actually-empty category×tier combo from the generated seed so
+// the widening path is exercised without depending on warped tier caps.
+const seedPlayers = JSON.parse(
+  readFileSync(new URL("../seed/players.json", import.meta.url), "utf8"),
+).players;
+const OBSCURITY = { easy: 1, medium: 2, hard: 3, impossible: 4 };
+const CATEGORY_IDS = ["ppg10", "allstars", "defense", "hof"];
+let emptyCombo = null;
+for (const cat of CATEGORY_IDS) {
+  for (const [level, tier] of Object.entries(OBSCURITY)) {
+    const hit = seedPlayers.some(
+      (p) => p.tags.includes(cat) && p.popularityTier === tier,
+    );
+    if (!hit) {
+      emptyCombo = { cat, level, tier };
+      break;
+    }
+  }
+  if (emptyCombo) break;
+}
+if (!emptyCombo) {
+  console.log("  skip fallback audit — no empty category×tier combo in seed");
+} else {
+  console.log(
+    `  using empty combo: category=${emptyCombo.cat} obscurity=${emptyCombo.level} (tier ${emptyCombo.tier})`,
+  );
+  await client.mutation(api.rooms.updateSettings, {
+    sessionId: host,
+    roomId,
+    settings: {
+      obscurity: emptyCombo.level,
+      clueDifficulty: "impossible",
+      categories: [emptyCombo.cat],
+    },
+  });
+  await client.mutation(api.games.startGame, { sessionId: host, roomId });
+  game = await client.query(api.games.getCurrentGame, { roomId });
+  cards = await fetchAssignments(game.gameId);
+  imposters = Object.entries(cards).filter(([, c]) => c.role === "imposter");
+  crew = Object.entries(cards).filter(([, c]) => c.role === "crew");
+  ok(
+    "widening produced a round instead of an error",
+    game.roundNumber === 1 && imposters.length === 1 && crew[0][1].playerName.length > 0,
+    `player: ${crew[0][1].playerName}`,
+  );
+  await client.mutation(api.games.backToLobby, { sessionId: host, roomId });
+}
 
 console.log("\n7. Leave / host promotion / cleanup");
 await client.mutation(api.rooms.leaveRoom, { sessionId: host, roomId });

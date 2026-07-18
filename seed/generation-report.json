@@ -1,0 +1,655 @@
+{
+  "poolSizes": {
+    "total": 217,
+    "ppg10": 157,
+    "allstars": 74,
+    "defense": 44,
+    "hof": 20
+  },
+  "rejectCounts": {
+    "floor": 4258,
+    "ceiling": 2392,
+    "diversity": 391,
+    "duplicate": 0
+  },
+  "shortfalls": [
+    {
+      "name": "Michael Porter Jr.",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Bam Adebayo",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Derrick White",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 3
+      }
+    },
+    {
+      "name": "Jarrett Allen",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Andrew Wiggins",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 2
+      }
+    },
+    {
+      "name": "Naji Marshall",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 3
+      }
+    },
+    {
+      "name": "Mikal Bridges",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 1
+      }
+    },
+    {
+      "name": "Jalen Suggs",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 3
+      }
+    },
+    {
+      "name": "Quentin Grimes",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Brandon Williams",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Dyson Daniels",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Nic Claxton",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Rui Hachimura",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Sandro Mamukelashvili",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 4,
+        "impossible": 2
+      }
+    },
+    {
+      "name": "Khris Middleton",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Neemias Queta",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "Derrick Jones Jr.",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 0
+      }
+    },
+    {
+      "name": "Kevin Huerter",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 0
+      }
+    },
+    {
+      "name": "Jordan Miller",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 2
+      }
+    },
+    {
+      "name": "Andre Drummond",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "D'Angelo Russell",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 3
+      }
+    },
+    {
+      "name": "Herbert Jones",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 2
+      }
+    },
+    {
+      "name": "Dominique Wilkins",
+      "counts": {
+        "easy": 2,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    },
+    {
+      "name": "George Gervin",
+      "counts": {
+        "easy": 5,
+        "medium": 5,
+        "hard": 5,
+        "impossible": 4
+      }
+    }
+  ],
+  "unmatchedStars": [
+    "Kareem Abdul-Jabbar",
+    "Kobe Bryant",
+    "Julius Erving",
+    "Tim Duncan",
+    "Kevin Garnett",
+    "Shaquille O'Neal",
+    "Michael Jordan",
+    "Karl Malone",
+    "Dirk Nowitzki",
+    "Jerry West",
+    "Wilt Chamberlain",
+    "Bob Cousy",
+    "John Havlicek",
+    "Moses Malone",
+    "Dwyane Wade",
+    "Rick Barry",
+    "Larry Bird",
+    "George Gervin",
+    "Elvin Hayes",
+    "Magic Johnson",
+    "Hakeem Olajuwon",
+    "Oscar Robertson",
+    "Bill Russell",
+    "Dolph Schayes",
+    "Isiah Thomas",
+    "Charles Barkley",
+    "Elgin Baylor",
+    "Chris Bosh",
+    "Patrick Ewing",
+    "Artis Gilmore",
+    "Allen Iverson",
+    "Bob Pettit",
+    "Ray Allen",
+    "Carmelo Anthony",
+    "Paul Arizin",
+    "Clyde Drexler",
+    "Hal Greer",
+    "Jason Kidd",
+    "Paul Pierce",
+    "David Robinson",
+    "John Stockton",
+    "Kyrie Irving",
+    "Damian Lillard",
+    "Robert Parish",
+    "Lenny Wilkens",
+    "Dominique Wilkins",
+    "Vince Carter",
+    "Dave Cowens",
+    "Dave DeBusschere",
+    "Alex English"
+  ],
+  "unmatchedDefense": [
+    "Tim Duncan",
+    "Kobe Bryant",
+    "Kevin Garnett",
+    "Kareem Abdul-Jabbar",
+    "Bobby Jones",
+    "Scottie Pippen",
+    "Dennis Johnson",
+    "Michael Jordan",
+    "Jason Kidd",
+    "Hakeem Olajuwon",
+    "Bruce Bowen",
+    "Michael Cooper",
+    "John Havlicek",
+    "David Robinson",
+    "Dennis Rodman",
+    "Norm Van Lier",
+    "Walt Frazier",
+    "Tony Allen",
+    "Mookie Blaylock",
+    "Don Buse",
+    "Dave DeBusschere",
+    "Kevin McHale",
+    "Dikembe Mutombo",
+    "Alvin Robertson",
+    "Jerry Sloan",
+    "Ben Wallace",
+    "Don Chaney",
+    "Maurice Cheeks",
+    "Joe Dumars",
+    "Mark Eaton",
+    "Artis Gilmore",
+    "Dwight Howard",
+    "Sidney Moncrief",
+    "Dan Roundfield",
+    "Paul Silas",
+    "John Stockton",
+    "Nate Thurmond",
+    "Jerry West",
+    "Quinn Buckner",
+    "Marcus Camby",
+    "Doug Christie",
+    "Horace Grant",
+    "Karl Malone",
+    "Tayshaun Prince",
+    "Rajon Rondo",
+    "Buck Williams",
+    "Metta World Peace",
+    "Patrick Beverley",
+    "Larry Bird",
+    "P.J. Brown"
+  ],
+  "unmatchedStarsCount": 463,
+  "unmatchedDefenseCount": 150,
+  "narrowestByCat": {
+    "ppg10": [
+      {
+        "text": "An active player in the Western Conference averaging 28+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Western Conference averaging 1.5+ steals this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Pacific Division averaging 25+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 22+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 6+ assists this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 2.5+ threes this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California who is an All-Star this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a West franchise averaging 7+ rebounds this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a West franchise averaging 3+ threes this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active point guard averaging 28+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      }
+    ],
+    "allstars": [
+      {
+        "text": "An active player in the Western Conference averaging 28+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Western Conference averaging 1.5+ steals this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Pacific Division averaging 25+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 22+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 6+ assists this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 2.5+ threes this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California who is an All-Star this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a West franchise averaging 7+ rebounds this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a West franchise averaging 3+ threes this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active point guard averaging 28+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      }
+    ],
+    "defense": [
+      {
+        "text": "An active player who is an All-NBA selection this season",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Western Conference averaging 1.5+ steals this season",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Western Conference who is an All-NBA selection this season",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Pacific Division who is an All-Defensive Team honoree",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active small forward on a team based in California",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 12+ points this season",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 15+ points this season",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 18+ points this season",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 20+ points this season",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a West franchise averaging 2.5+ threes this season",
+        "player": "Kawhi Leonard",
+        "minCount": 3,
+        "difficulty": "easy"
+      }
+    ],
+    "hof": [
+      {
+        "text": "A Hall of Famer who starred in the 1990s",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Fame guard associated with the Eastern Conference",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Famer associated with the Eastern Conference, with at least five championships",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Fame guard who played in the 1980s",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Fame guard named to an All-Defensive Team",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Fame guard with at least five championships",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Fame shooting guard who played in the 2000s",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Fame shooting guard who won a championship",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Fame shooting guard named to an All-Defensive Team",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "A Hall of Fame shooting guard with at least three championships",
+        "player": "Michael Jordan",
+        "minCount": 3,
+        "difficulty": "easy"
+      }
+    ],
+    "full": [
+      {
+        "text": "An active player in the Western Conference averaging 28+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Western Conference averaging 1.5+ steals this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player in the Pacific Division averaging 25+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 22+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 6+ assists this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California averaging 2.5+ threes this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a team based in California who is an All-Star this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a West franchise averaging 7+ rebounds this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active player on a West franchise averaging 3+ threes this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      },
+      {
+        "text": "An active point guard averaging 28+ points this season",
+        "player": "Luka Dončić",
+        "minCount": 3,
+        "difficulty": "easy"
+      }
+    ]
+  },
+  "coverageSummary": {
+    "players": 217,
+    "fullyCovered": 193
+  }
+}
