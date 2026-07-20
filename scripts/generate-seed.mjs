@@ -4,6 +4,13 @@
  * All-Defensive honor lists + curated HOF data.
  *
  * Run: node scripts/generate-seed.mjs
+ *
+ * ⚠️  DEPRECATED FOR CLUE TEXT. Clues in seed/players.json are now
+ * hand-authored in scripts/clue-data.mjs and applied via
+ * scripts/apply-clues.mjs. Re-running THIS script regenerates template
+ * clues and will overwrite that work. If you regenerate the player pool
+ * here, re-run `node scripts/apply-clues.mjs` afterward to restore the
+ * hand-written clues.
  */
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
